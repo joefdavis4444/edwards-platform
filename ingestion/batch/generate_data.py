@@ -1,6 +1,7 @@
 import pandas as pd
 import random
 import os
+import holidays
 from faker import Faker
 from datetime import date, timedelta
 
@@ -86,8 +87,29 @@ def generate_patients(trial_sites, n=200):
         })
     return pd.DataFrame(records)
 
+def generate_dates(start_date=date(2019, 8, 1), end_date=date(2021, 11, 30)):
+    records = []
+    current =start_date
+    us_holidays = holidays.USA()
+    while current <= end_date:
+        records.append({
+            'date_id': int(current.strftime('%Y%m%d')),
+            'full_date': current,
+            'year': current.year,
+            'month': current.month,
+            'day': current.day,
+            'quarter': (current.month - 1) // 3 + 1,
+            'day_of_week': current.strftime('%A'),
+            'is_holiday': current in us_holidays,
+            'holiday_name': us_holidays.get(current, None)
+        })
+        current += timedelta(days=1)
+    return pd.DataFrame(records)
+
+
 manufacturers = generate_manufacturers()
 devices = generate_devices(manufacturers)
 trial_sites = generate_trial_sites()
 patients = generate_patients(trial_sites)
-print(patients)
+dates = generate_dates()
+print(dates[dates['is_holiday'] == True])
