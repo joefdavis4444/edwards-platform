@@ -50,6 +50,30 @@ def generate_devices(manufacturers_df, n=50):
     return pd.DataFrame(records)    
 
 
+REGION_MAP = {
+    'North America': [('New York', 'USA'), ('Toronto', 'Canada'), ('Mexico City', 'Mexico'), ('Chicago', 'USA'), ('Los Angeles', 'USA')],
+    'Europe': [('London', 'UK'), ('Berlin', 'Germany'), ('Paris', 'France'), ('Amsterdam', 'Netherlands'), ('Zurich', 'Switzerland')],
+    'Asia Pacific': [('Tokyo', 'Japan'), ('Sydney', 'Australia'), ('Singapore', 'Singapore'), ('Seoul', 'South Korea'), ('Mumbai', 'India')],
+    'Latin America': [('São Paulo', 'Brazil'), ('Buenos Aires', 'Argentina'), ('Bogotá', 'Colombia'), ('Lima', 'Peru'), ('Santiago', 'Chile')]
+}
+
+def generate_trial_sites(n=20):
+    records = []
+    for i in range(1, n+1):
+        region = random.choice(list(REGION_MAP.keys()))
+        city, country = random.choice(REGION_MAP[region])
+        records.append({
+            'trial_site_id': f'SITE{i:03d}',
+            'site_name': f'{city} Clinical Research Center',
+            'city': city,
+            'country': country,
+            'region': region,
+            'status': random.choice(['Active', 'On Hold', 'Closed'])
+        })
+    return pd.DataFrame(records)
+
+
 manufacturers = generate_manufacturers()
 devices = generate_devices(manufacturers)
-print(devices)
+trial_sites = generate_trial_sites()
+print(trial_sites)
