@@ -72,8 +72,22 @@ def generate_trial_sites(n=20):
         })
     return pd.DataFrame(records)
 
+def generate_patients(trial_sites, n=200):
+    records = []
+    for i in range(1, n+1):
+        records.append({
+            'patient_id': f'PATIENT{i:04d}',
+            'trial_site_id': random.choice(trial_sites['trial_site_id'].tolist()),
+            'diagnosis': random.choice(['Aortic Stenosis', 'Mitral Regurgitation', 'Heart Failure', 'Atrial Fibrillation', 'Coronary Artery Disease']),
+            'severity_level': random.choice(['Mild', 'Moderate', 'Severe', 'Critical']),
+            'treatment': random.choice(['HV-2000 Implant', 'HV-3000 Implant', 'Hemodynamic Monitoring', 'Pressure Sensing', 'Drug Therapy']),
+            'enrollment_status': random.choice(['Enrolled', 'Completed', 'Withdrawn', 'Pending']),
+            'age_group': random.choices(['0-10', '11-20', '21-30', '31-40', '41-50', '51-60', '61+'], weights=[1, 1, 2, 5, 10, 20, 25])[0],
+        })
+    return pd.DataFrame(records)
 
 manufacturers = generate_manufacturers()
 devices = generate_devices(manufacturers)
 trial_sites = generate_trial_sites()
-print(trial_sites)
+patients = generate_patients(trial_sites)
+print(patients)
