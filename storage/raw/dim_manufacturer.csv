@@ -1,0 +1,11 @@
+manufacturer_id,manufacturer_name,city,country,region,fda_approved,certification_status
+MFG001,"Rodriguez, Figueroa and Sanchez",Lake Curtis,Saint Vincent and the Grenadines,North America,True,Pending
+MFG002,"Miller, Henderson and Johnson",East William,Anguilla,Europe,True,CE Marked
+MFG003,"Gonzalez, Santos and Gardner",South Bridget,Sudan,North America,True,Suspended
+MFG004,Blake and Sons,Petersonberg,Cuba,North America,True,ISO 13485
+MFG005,Garcia-James,Melanieview,Sri Lanka,Europe,True,ISO 13485
+MFG006,Blair PLC,South Christianport,Switzerland,Europe,False,CE Marked
+MFG007,"Montgomery, Hensley and Ray",North Donnaport,Belgium,Latin America,False,ISO 13485
+MFG008,Delacruz Group,Shawnstad,Central African Republic,Europe,False,Pending
+MFG009,Kelly-Santiago,New Cynthiaside,Saint Lucia,Asia Pacific,True,CE Marked
+MFG010,Martin Group,Veronicaside,Cyprus,Asia Pacific,True,ISO 13485

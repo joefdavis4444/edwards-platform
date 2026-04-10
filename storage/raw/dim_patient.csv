@@ -1,0 +1,201 @@
+patient_id,trial_site_id,diagnosis,severity_level,treatment,enrollment_status,age_group
+PATIENT0001,SITE003,Aortic Stenosis,Critical,Drug Therapy,Enrolled,31-40
+PATIENT0002,SITE007,Coronary Artery Disease,Severe,HV-3000 Implant,Withdrawn,61+
+PATIENT0003,SITE008,Heart Failure,Severe,HV-3000 Implant,Pending,61+
+PATIENT0004,SITE010,Coronary Artery Disease,Mild,Drug Therapy,Withdrawn,61+
+PATIENT0005,SITE004,Mitral Regurgitation,Severe,HV-2000 Implant,Enrolled,61+
+PATIENT0006,SITE005,Heart Failure,Severe,Drug Therapy,Completed,61+
+PATIENT0007,SITE007,Heart Failure,Critical,Hemodynamic Monitoring,Enrolled,31-40
+PATIENT0008,SITE014,Heart Failure,Mild,HV-2000 Implant,Withdrawn,61+
+PATIENT0009,SITE009,Mitral Regurgitation,Critical,Drug Therapy,Pending,51-60
+PATIENT0010,SITE004,Aortic Stenosis,Moderate,Drug Therapy,Enrolled,61+
+PATIENT0011,SITE019,Coronary Artery Disease,Moderate,Pressure Sensing,Completed,21-30
+PATIENT0012,SITE012,Aortic Stenosis,Severe,HV-3000 Implant,Completed,61+
+PATIENT0013,SITE012,Coronary Artery Disease,Critical,Drug Therapy,Completed,61+
+PATIENT0014,SITE008,Mitral Regurgitation,Moderate,Pressure Sensing,Enrolled,41-50
+PATIENT0015,SITE011,Atrial Fibrillation,Moderate,Hemodynamic Monitoring,Completed,61+
+PATIENT0016,SITE004,Atrial Fibrillation,Mild,Pressure Sensing,Completed,41-50
+PATIENT0017,SITE015,Heart Failure,Severe,HV-3000 Implant,Completed,11-20
+PATIENT0018,SITE007,Atrial Fibrillation,Severe,Hemodynamic Monitoring,Enrolled,61+
+PATIENT0019,SITE009,Heart Failure,Critical,Drug Therapy,Withdrawn,61+
+PATIENT0020,SITE004,Heart Failure,Moderate,Drug Therapy,Withdrawn,21-30
+PATIENT0021,SITE020,Atrial Fibrillation,Severe,Hemodynamic Monitoring,Pending,51-60
+PATIENT0022,SITE017,Aortic Stenosis,Critical,Drug Therapy,Completed,41-50
+PATIENT0023,SITE014,Aortic Stenosis,Moderate,Hemodynamic Monitoring,Pending,31-40
+PATIENT0024,SITE011,Coronary Artery Disease,Severe,HV-2000 Implant,Withdrawn,51-60
+PATIENT0025,SITE014,Heart Failure,Critical,Hemodynamic Monitoring,Completed,41-50
+PATIENT0026,SITE013,Mitral Regurgitation,Severe,Pressure Sensing,Enrolled,51-60
+PATIENT0027,SITE007,Atrial Fibrillation,Severe,Pressure Sensing,Pending,51-60
+PATIENT0028,SITE007,Coronary Artery Disease,Critical,HV-3000 Implant,Enrolled,41-50
+PATIENT0029,SITE020,Heart Failure,Mild,HV-3000 Implant,Withdrawn,41-50
+PATIENT0030,SITE007,Mitral Regurgitation,Mild,HV-2000 Implant,Completed,61+
+PATIENT0031,SITE020,Aortic Stenosis,Critical,Pressure Sensing,Completed,61+
+PATIENT0032,SITE013,Atrial Fibrillation,Critical,HV-3000 Implant,Completed,61+
+PATIENT0033,SITE001,Aortic Stenosis,Critical,HV-3000 Implant,Completed,61+
+PATIENT0034,SITE017,Atrial Fibrillation,Mild,Drug Therapy,Completed,61+
+PATIENT0035,SITE004,Atrial Fibrillation,Moderate,Pressure Sensing,Withdrawn,61+
+PATIENT0036,SITE015,Coronary Artery Disease,Critical,Drug Therapy,Pending,61+
+PATIENT0037,SITE016,Atrial Fibrillation,Severe,HV-3000 Implant,Withdrawn,61+
+PATIENT0038,SITE017,Atrial Fibrillation,Moderate,Hemodynamic Monitoring,Pending,31-40
+PATIENT0039,SITE010,Mitral Regurgitation,Severe,Hemodynamic Monitoring,Withdrawn,61+
+PATIENT0040,SITE003,Mitral Regurgitation,Moderate,HV-3000 Implant,Pending,61+
+PATIENT0041,SITE007,Aortic Stenosis,Critical,Pressure Sensing,Withdrawn,51-60
+PATIENT0042,SITE014,Aortic Stenosis,Moderate,Pressure Sensing,Pending,61+
+PATIENT0043,SITE019,Aortic Stenosis,Critical,Pressure Sensing,Enrolled,61+
+PATIENT0044,SITE010,Atrial Fibrillation,Critical,Drug Therapy,Completed,51-60
+PATIENT0045,SITE009,Atrial Fibrillation,Critical,HV-2000 Implant,Pending,51-60
+PATIENT0046,SITE013,Mitral Regurgitation,Critical,HV-3000 Implant,Enrolled,61+
+PATIENT0047,SITE019,Coronary Artery Disease,Mild,HV-2000 Implant,Pending,31-40
+PATIENT0048,SITE015,Mitral Regurgitation,Mild,Hemodynamic Monitoring,Pending,51-60
+PATIENT0049,SITE015,Heart Failure,Severe,Pressure Sensing,Withdrawn,61+
+PATIENT0050,SITE014,Heart Failure,Mild,Pressure Sensing,Enrolled,61+
+PATIENT0051,SITE002,Heart Failure,Moderate,HV-2000 Implant,Enrolled,61+
+PATIENT0052,SITE008,Mitral Regurgitation,Mild,Drug Therapy,Completed,41-50
+PATIENT0053,SITE016,Aortic Stenosis,Moderate,Pressure Sensing,Withdrawn,61+
+PATIENT0054,SITE006,Coronary Artery Disease,Mild,HV-3000 Implant,Withdrawn,31-40
+PATIENT0055,SITE001,Heart Failure,Critical,Pressure Sensing,Completed,31-40
+PATIENT0056,SITE008,Aortic Stenosis,Severe,Drug Therapy,Enrolled,61+
+PATIENT0057,SITE019,Aortic Stenosis,Severe,Drug Therapy,Pending,61+
+PATIENT0058,SITE003,Coronary Artery Disease,Severe,HV-2000 Implant,Pending,61+
+PATIENT0059,SITE004,Atrial Fibrillation,Severe,Pressure Sensing,Completed,51-60
+PATIENT0060,SITE017,Heart Failure,Critical,Pressure Sensing,Pending,61+
+PATIENT0061,SITE019,Heart Failure,Severe,HV-3000 Implant,Enrolled,41-50
+PATIENT0062,SITE015,Mitral Regurgitation,Critical,Drug Therapy,Pending,51-60
+PATIENT0063,SITE016,Heart Failure,Moderate,Pressure Sensing,Completed,51-60
+PATIENT0064,SITE009,Heart Failure,Severe,Drug Therapy,Withdrawn,51-60
+PATIENT0065,SITE017,Mitral Regurgitation,Mild,HV-3000 Implant,Pending,51-60
+PATIENT0066,SITE008,Atrial Fibrillation,Critical,Pressure Sensing,Enrolled,31-40
+PATIENT0067,SITE008,Atrial Fibrillation,Moderate,Hemodynamic Monitoring,Withdrawn,51-60
+PATIENT0068,SITE017,Heart Failure,Critical,Drug Therapy,Withdrawn,51-60
+PATIENT0069,SITE015,Heart Failure,Severe,Hemodynamic Monitoring,Completed,31-40
+PATIENT0070,SITE007,Heart Failure,Mild,Drug Therapy,Completed,41-50
+PATIENT0071,SITE016,Heart Failure,Severe,HV-2000 Implant,Completed,41-50
+PATIENT0072,SITE012,Mitral Regurgitation,Severe,HV-2000 Implant,Completed,41-50
+PATIENT0073,SITE002,Coronary Artery Disease,Severe,HV-3000 Implant,Pending,31-40
+PATIENT0074,SITE001,Coronary Artery Disease,Severe,Pressure Sensing,Pending,51-60
+PATIENT0075,SITE006,Aortic Stenosis,Severe,Pressure Sensing,Enrolled,61+
+PATIENT0076,SITE013,Atrial Fibrillation,Mild,Drug Therapy,Enrolled,41-50
+PATIENT0077,SITE019,Heart Failure,Mild,HV-3000 Implant,Enrolled,51-60
+PATIENT0078,SITE014,Coronary Artery Disease,Moderate,Drug Therapy,Pending,51-60
+PATIENT0079,SITE015,Heart Failure,Critical,Hemodynamic Monitoring,Enrolled,61+
+PATIENT0080,SITE004,Mitral Regurgitation,Moderate,Hemodynamic Monitoring,Enrolled,41-50
+PATIENT0081,SITE006,Coronary Artery Disease,Mild,HV-3000 Implant,Enrolled,51-60
+PATIENT0082,SITE020,Atrial Fibrillation,Severe,HV-2000 Implant,Completed,41-50
+PATIENT0083,SITE010,Atrial Fibrillation,Mild,HV-3000 Implant,Withdrawn,61+
+PATIENT0084,SITE019,Mitral Regurgitation,Critical,HV-2000 Implant,Completed,61+
+PATIENT0085,SITE009,Mitral Regurgitation,Mild,HV-2000 Implant,Completed,61+
+PATIENT0086,SITE020,Coronary Artery Disease,Severe,Pressure Sensing,Enrolled,51-60
+PATIENT0087,SITE010,Atrial Fibrillation,Severe,Drug Therapy,Pending,51-60
+PATIENT0088,SITE020,Aortic Stenosis,Critical,Hemodynamic Monitoring,Withdrawn,11-20
+PATIENT0089,SITE008,Coronary Artery Disease,Mild,Hemodynamic Monitoring,Enrolled,61+
+PATIENT0090,SITE006,Atrial Fibrillation,Critical,Hemodynamic Monitoring,Completed,61+
+PATIENT0091,SITE014,Atrial Fibrillation,Mild,Pressure Sensing,Withdrawn,51-60
+PATIENT0092,SITE011,Aortic Stenosis,Moderate,Hemodynamic Monitoring,Pending,61+
+PATIENT0093,SITE010,Atrial Fibrillation,Mild,Pressure Sensing,Enrolled,51-60
+PATIENT0094,SITE011,Aortic Stenosis,Critical,Drug Therapy,Enrolled,61+
+PATIENT0095,SITE018,Atrial Fibrillation,Critical,HV-2000 Implant,Completed,51-60
+PATIENT0096,SITE020,Atrial Fibrillation,Critical,HV-2000 Implant,Completed,41-50
+PATIENT0097,SITE005,Heart Failure,Critical,Pressure Sensing,Enrolled,11-20
+PATIENT0098,SITE020,Mitral Regurgitation,Moderate,Hemodynamic Monitoring,Enrolled,51-60
+PATIENT0099,SITE003,Mitral Regurgitation,Mild,Pressure Sensing,Enrolled,61+
+PATIENT0100,SITE005,Atrial Fibrillation,Severe,Drug Therapy,Withdrawn,51-60
+PATIENT0101,SITE016,Atrial Fibrillation,Moderate,Pressure Sensing,Completed,51-60
+PATIENT0102,SITE020,Coronary Artery Disease,Moderate,HV-2000 Implant,Withdrawn,61+
+PATIENT0103,SITE014,Heart Failure,Severe,HV-2000 Implant,Withdrawn,61+
+PATIENT0104,SITE019,Coronary Artery Disease,Critical,HV-3000 Implant,Pending,51-60
+PATIENT0105,SITE012,Heart Failure,Critical,Pressure Sensing,Withdrawn,61+
+PATIENT0106,SITE008,Coronary Artery Disease,Critical,HV-3000 Implant,Pending,21-30
+PATIENT0107,SITE016,Atrial Fibrillation,Critical,HV-3000 Implant,Pending,61+
+PATIENT0108,SITE005,Coronary Artery Disease,Severe,HV-2000 Implant,Pending,31-40
+PATIENT0109,SITE015,Aortic Stenosis,Moderate,Pressure Sensing,Completed,31-40
+PATIENT0110,SITE009,Heart Failure,Critical,HV-2000 Implant,Withdrawn,61+
+PATIENT0111,SITE018,Atrial Fibrillation,Severe,Pressure Sensing,Enrolled,61+
+PATIENT0112,SITE008,Heart Failure,Moderate,HV-2000 Implant,Pending,61+
+PATIENT0113,SITE004,Atrial Fibrillation,Moderate,Hemodynamic Monitoring,Enrolled,21-30
+PATIENT0114,SITE002,Heart Failure,Severe,Hemodynamic Monitoring,Pending,41-50
+PATIENT0115,SITE017,Atrial Fibrillation,Moderate,HV-3000 Implant,Completed,31-40
+PATIENT0116,SITE013,Coronary Artery Disease,Moderate,Pressure Sensing,Completed,41-50
+PATIENT0117,SITE009,Atrial Fibrillation,Severe,HV-2000 Implant,Pending,61+
+PATIENT0118,SITE018,Mitral Regurgitation,Mild,Pressure Sensing,Withdrawn,61+
+PATIENT0119,SITE010,Atrial Fibrillation,Severe,Pressure Sensing,Withdrawn,41-50
+PATIENT0120,SITE013,Atrial Fibrillation,Mild,HV-3000 Implant,Pending,51-60
+PATIENT0121,SITE019,Heart Failure,Severe,HV-2000 Implant,Pending,41-50
+PATIENT0122,SITE019,Aortic Stenosis,Critical,Hemodynamic Monitoring,Completed,51-60
+PATIENT0123,SITE012,Mitral Regurgitation,Moderate,Drug Therapy,Withdrawn,61+
+PATIENT0124,SITE005,Aortic Stenosis,Mild,Hemodynamic Monitoring,Pending,21-30
+PATIENT0125,SITE012,Mitral Regurgitation,Mild,Hemodynamic Monitoring,Withdrawn,61+
+PATIENT0126,SITE006,Mitral Regurgitation,Moderate,Drug Therapy,Withdrawn,51-60
+PATIENT0127,SITE009,Mitral Regurgitation,Severe,Pressure Sensing,Withdrawn,61+
+PATIENT0128,SITE011,Aortic Stenosis,Critical,HV-2000 Implant,Completed,61+
+PATIENT0129,SITE008,Atrial Fibrillation,Severe,HV-2000 Implant,Pending,0-10
+PATIENT0130,SITE018,Aortic Stenosis,Critical,Hemodynamic Monitoring,Withdrawn,51-60
+PATIENT0131,SITE012,Aortic Stenosis,Moderate,Pressure Sensing,Enrolled,61+
+PATIENT0132,SITE018,Heart Failure,Moderate,HV-2000 Implant,Pending,61+
+PATIENT0133,SITE010,Atrial Fibrillation,Mild,HV-3000 Implant,Enrolled,61+
+PATIENT0134,SITE010,Atrial Fibrillation,Mild,HV-2000 Implant,Completed,61+
+PATIENT0135,SITE005,Atrial Fibrillation,Critical,Hemodynamic Monitoring,Pending,51-60
+PATIENT0136,SITE005,Atrial Fibrillation,Mild,Pressure Sensing,Pending,61+
+PATIENT0137,SITE009,Aortic Stenosis,Severe,HV-3000 Implant,Pending,51-60
+PATIENT0138,SITE008,Heart Failure,Mild,Hemodynamic Monitoring,Withdrawn,21-30
+PATIENT0139,SITE009,Mitral Regurgitation,Mild,Pressure Sensing,Enrolled,61+
+PATIENT0140,SITE020,Aortic Stenosis,Mild,Hemodynamic Monitoring,Completed,61+
+PATIENT0141,SITE019,Mitral Regurgitation,Mild,Drug Therapy,Completed,51-60
+PATIENT0142,SITE008,Heart Failure,Moderate,Drug Therapy,Enrolled,41-50
+PATIENT0143,SITE005,Mitral Regurgitation,Severe,HV-3000 Implant,Enrolled,61+
+PATIENT0144,SITE001,Mitral Regurgitation,Mild,Hemodynamic Monitoring,Completed,51-60
+PATIENT0145,SITE001,Mitral Regurgitation,Severe,HV-2000 Implant,Completed,61+
+PATIENT0146,SITE017,Aortic Stenosis,Mild,Pressure Sensing,Pending,61+
+PATIENT0147,SITE017,Coronary Artery Disease,Mild,Pressure Sensing,Completed,61+
+PATIENT0148,SITE002,Coronary Artery Disease,Severe,Pressure Sensing,Enrolled,21-30
+PATIENT0149,SITE016,Atrial Fibrillation,Critical,HV-2000 Implant,Pending,61+
+PATIENT0150,SITE015,Aortic Stenosis,Mild,Hemodynamic Monitoring,Completed,31-40
+PATIENT0151,SITE009,Coronary Artery Disease,Severe,Pressure Sensing,Withdrawn,51-60
+PATIENT0152,SITE020,Atrial Fibrillation,Mild,HV-2000 Implant,Completed,51-60
+PATIENT0153,SITE008,Atrial Fibrillation,Severe,Pressure Sensing,Pending,51-60
+PATIENT0154,SITE004,Heart Failure,Critical,Hemodynamic Monitoring,Withdrawn,51-60
+PATIENT0155,SITE005,Atrial Fibrillation,Mild,HV-2000 Implant,Enrolled,31-40
+PATIENT0156,SITE004,Heart Failure,Moderate,Drug Therapy,Enrolled,51-60
+PATIENT0157,SITE018,Coronary Artery Disease,Severe,HV-2000 Implant,Pending,51-60
+PATIENT0158,SITE014,Aortic Stenosis,Severe,Drug Therapy,Withdrawn,51-60
+PATIENT0159,SITE019,Coronary Artery Disease,Moderate,HV-3000 Implant,Pending,41-50
+PATIENT0160,SITE004,Heart Failure,Severe,HV-2000 Implant,Withdrawn,51-60
+PATIENT0161,SITE014,Coronary Artery Disease,Mild,Drug Therapy,Withdrawn,11-20
+PATIENT0162,SITE009,Heart Failure,Severe,Hemodynamic Monitoring,Enrolled,41-50
+PATIENT0163,SITE005,Coronary Artery Disease,Critical,HV-2000 Implant,Completed,61+
+PATIENT0164,SITE001,Aortic Stenosis,Moderate,Pressure Sensing,Pending,51-60
+PATIENT0165,SITE006,Heart Failure,Severe,Hemodynamic Monitoring,Enrolled,61+
+PATIENT0166,SITE005,Mitral Regurgitation,Mild,HV-2000 Implant,Withdrawn,51-60
+PATIENT0167,SITE014,Atrial Fibrillation,Critical,Pressure Sensing,Withdrawn,41-50
+PATIENT0168,SITE017,Aortic Stenosis,Severe,Pressure Sensing,Enrolled,41-50
+PATIENT0169,SITE019,Atrial Fibrillation,Severe,HV-2000 Implant,Completed,51-60
+PATIENT0170,SITE020,Aortic Stenosis,Mild,HV-3000 Implant,Withdrawn,61+
+PATIENT0171,SITE005,Heart Failure,Severe,Hemodynamic Monitoring,Enrolled,0-10
+PATIENT0172,SITE014,Mitral Regurgitation,Moderate,Pressure Sensing,Completed,51-60
+PATIENT0173,SITE012,Aortic Stenosis,Critical,HV-2000 Implant,Pending,11-20
+PATIENT0174,SITE003,Heart Failure,Critical,Drug Therapy,Pending,61+
+PATIENT0175,SITE014,Heart Failure,Mild,Pressure Sensing,Enrolled,61+
+PATIENT0176,SITE006,Coronary Artery Disease,Critical,Hemodynamic Monitoring,Enrolled,51-60
+PATIENT0177,SITE004,Mitral Regurgitation,Critical,Drug Therapy,Pending,51-60
+PATIENT0178,SITE013,Heart Failure,Severe,HV-3000 Implant,Withdrawn,61+
+PATIENT0179,SITE003,Coronary Artery Disease,Mild,Drug Therapy,Completed,61+
+PATIENT0180,SITE012,Heart Failure,Moderate,HV-3000 Implant,Enrolled,41-50
+PATIENT0181,SITE007,Mitral Regurgitation,Moderate,HV-2000 Implant,Completed,61+
+PATIENT0182,SITE016,Atrial Fibrillation,Critical,Drug Therapy,Withdrawn,61+
+PATIENT0183,SITE011,Mitral Regurgitation,Critical,HV-2000 Implant,Pending,51-60
+PATIENT0184,SITE010,Heart Failure,Mild,Hemodynamic Monitoring,Enrolled,51-60
+PATIENT0185,SITE015,Aortic Stenosis,Mild,Hemodynamic Monitoring,Withdrawn,31-40
+PATIENT0186,SITE003,Coronary Artery Disease,Critical,Pressure Sensing,Enrolled,51-60
+PATIENT0187,SITE019,Mitral Regurgitation,Severe,Drug Therapy,Pending,51-60
+PATIENT0188,SITE002,Atrial Fibrillation,Mild,Hemodynamic Monitoring,Enrolled,51-60
+PATIENT0189,SITE006,Aortic Stenosis,Moderate,Pressure Sensing,Pending,51-60
+PATIENT0190,SITE020,Mitral Regurgitation,Severe,Hemodynamic Monitoring,Withdrawn,51-60
+PATIENT0191,SITE011,Coronary Artery Disease,Mild,Hemodynamic Monitoring,Enrolled,51-60
+PATIENT0192,SITE018,Atrial Fibrillation,Severe,Hemodynamic Monitoring,Completed,51-60
+PATIENT0193,SITE019,Mitral Regurgitation,Severe,Hemodynamic Monitoring,Pending,31-40
+PATIENT0194,SITE003,Heart Failure,Critical,Hemodynamic Monitoring,Completed,61+
+PATIENT0195,SITE017,Aortic Stenosis,Critical,Drug Therapy,Withdrawn,11-20
+PATIENT0196,SITE010,Mitral Regurgitation,Moderate,Hemodynamic Monitoring,Pending,41-50
+PATIENT0197,SITE005,Mitral Regurgitation,Mild,Hemodynamic Monitoring,Enrolled,51-60
+PATIENT0198,SITE018,Coronary Artery Disease,Mild,Hemodynamic Monitoring,Completed,51-60
+PATIENT0199,SITE005,Mitral Regurgitation,Moderate,Drug Therapy,Completed,61+
+PATIENT0200,SITE002,Atrial Fibrillation,Severe,HV-3000 Implant,Pending,61+

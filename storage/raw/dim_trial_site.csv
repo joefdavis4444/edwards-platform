@@ -1,0 +1,21 @@
+trial_site_id,site_name,city,country,region,status
+SITE001,Berlin Clinical Research Center,Berlin,Germany,Europe,On Hold
+SITE002,Lima Clinical Research Center,Lima,Peru,Latin America,Active
+SITE003,São Paulo Clinical Research Center,São Paulo,Brazil,Latin America,Active
+SITE004,São Paulo Clinical Research Center,São Paulo,Brazil,Latin America,On Hold
+SITE005,Seoul Clinical Research Center,Seoul,South Korea,Asia Pacific,On Hold
+SITE006,Santiago Clinical Research Center,Santiago,Chile,Latin America,Closed
+SITE007,Buenos Aires Clinical Research Center,Buenos Aires,Argentina,Latin America,Active
+SITE008,Sydney Clinical Research Center,Sydney,Australia,Asia Pacific,Active
+SITE009,Mexico City Clinical Research Center,Mexico City,Mexico,North America,Active
+SITE010,Los Angeles Clinical Research Center,Los Angeles,USA,North America,On Hold
+SITE011,London Clinical Research Center,London,UK,Europe,Closed
+SITE012,Toronto Clinical Research Center,Toronto,Canada,North America,Active
+SITE013,Toronto Clinical Research Center,Toronto,Canada,North America,On Hold
+SITE014,Los Angeles Clinical Research Center,Los Angeles,USA,North America,Active
+SITE015,Los Angeles Clinical Research Center,Los Angeles,USA,North America,Active
+SITE016,Santiago Clinical Research Center,Santiago,Chile,Latin America,Closed
+SITE017,Singapore Clinical Research Center,Singapore,Singapore,Asia Pacific,Active
+SITE018,Sydney Clinical Research Center,Sydney,Australia,Asia Pacific,On Hold
+SITE019,Buenos Aires Clinical Research Center,Buenos Aires,Argentina,Latin America,Closed
+SITE020,Seoul Clinical Research Center,Seoul,South Korea,Asia Pacific,On Hold

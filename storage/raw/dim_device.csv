@@ -1,0 +1,51 @@
+device_id,device_model,device_type,firmware_version,status,manufacturer_id
+DEV0001,HM-200,Hemodynamic Monitor,v1.0,Under Review,MFG006
+DEV0002,DP-500,Pressure Sensor,v1.2,Active,MFG008
+DEV0003,DP-500,Pressure Sensor,v1.0,Retired,MFG002
+DEV0004,DP-500,Pressure Sensor,v1.2,Under Review,MFG010
+DEV0005,HV-3000,Heart Valve,v1.0,Active,MFG004
+DEV0006,HM-100,Hemodynamic Monitor,v1.0,Recalled,MFG002
+DEV0007,HM-200,Hemodynamic Monitor,v1.2,Retired,MFG006
+DEV0008,HV-3000,Heart Valve,v1.2,Under Review,MFG004
+DEV0009,HM-100,Hemodynamic Monitor,v1.0,Recalled,MFG009
+DEV0010,HV-3000,Heart Valve,v1.1,Retired,MFG007
+DEV0011,HM-100,Hemodynamic Monitor,v1.4,Recalled,MFG006
+DEV0012,HV-2000,Heart Valve,v1.1,Active,MFG006
+DEV0013,HM-200,Hemodynamic Monitor,v1.2,Active,MFG004
+DEV0014,DP-500,Pressure Sensor,v1.2,Recalled,MFG008
+DEV0015,HM-200,Hemodynamic Monitor,v1.3,Recalled,MFG005
+DEV0016,HV-3000,Heart Valve,v1.1,Under Review,MFG010
+DEV0017,HM-200,Hemodynamic Monitor,v1.4,Retired,MFG006
+DEV0018,HV-3000,Heart Valve,v1.1,Retired,MFG002
+DEV0019,HV-2000,Heart Valve,v1.0,Recalled,MFG003
+DEV0020,HM-200,Hemodynamic Monitor,v1.4,Active,MFG007
+DEV0021,HM-200,Hemodynamic Monitor,v1.4,Retired,MFG009
+DEV0022,HM-100,Hemodynamic Monitor,v1.4,Active,MFG002
+DEV0023,DP-500,Pressure Sensor,v1.2,Under Review,MFG002
+DEV0024,HM-100,Hemodynamic Monitor,v1.3,Recalled,MFG008
+DEV0025,HV-2000,Heart Valve,v1.2,Recalled,MFG009
+DEV0026,HV-2000,Heart Valve,v1.2,Recalled,MFG003
+DEV0027,HM-100,Hemodynamic Monitor,v1.1,Active,MFG010
+DEV0028,HM-100,Hemodynamic Monitor,v1.3,Active,MFG002
+DEV0029,HM-100,Hemodynamic Monitor,v1.2,Recalled,MFG001
+DEV0030,HV-3000,Heart Valve,v1.4,Active,MFG002
+DEV0031,HM-200,Hemodynamic Monitor,v1.0,Recalled,MFG003
+DEV0032,HM-200,Hemodynamic Monitor,v1.4,Recalled,MFG005
+DEV0033,DP-500,Pressure Sensor,v1.4,Retired,MFG004
+DEV0034,DP-500,Pressure Sensor,v1.1,Under Review,MFG007
+DEV0035,HM-100,Hemodynamic Monitor,v1.3,Retired,MFG002
+DEV0036,HV-3000,Heart Valve,v1.1,Active,MFG006
+DEV0037,HV-2000,Heart Valve,v1.4,Recalled,MFG010
+DEV0038,HV-3000,Heart Valve,v1.0,Active,MFG001
+DEV0039,HV-3000,Heart Valve,v1.0,Active,MFG006
+DEV0040,HV-2000,Heart Valve,v1.4,Recalled,MFG005
+DEV0041,HM-200,Hemodynamic Monitor,v1.1,Recalled,MFG010
+DEV0042,DP-500,Pressure Sensor,v1.3,Recalled,MFG008
+DEV0043,HM-200,Hemodynamic Monitor,v1.1,Active,MFG002
+DEV0044,HM-200,Hemodynamic Monitor,v1.2,Retired,MFG007
+DEV0045,HM-200,Hemodynamic Monitor,v1.0,Active,MFG001
+DEV0046,HM-200,Hemodynamic Monitor,v1.2,Active,MFG004
+DEV0047,HV-3000,Heart Valve,v1.1,Retired,MFG003
+DEV0048,HM-200,Hemodynamic Monitor,v1.1,Under Review,MFG008
+DEV0049,HV-3000,Heart Valve,v1.0,Retired,MFG009
+DEV0050,HV-2000,Heart Valve,v1.0,Active,MFG002
