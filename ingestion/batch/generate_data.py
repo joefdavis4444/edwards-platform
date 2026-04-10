@@ -107,9 +107,36 @@ def generate_dates(start_date=date(2019, 8, 1), end_date=date(2021, 11, 30)):
     return pd.DataFrame(records)
 
 
+def generate_device_readings(devices_df, patients_df, trial_sites_df, dates_df, n=50000):
+    records = []
+    date_ids = dates_df['date_id'].tolist()
+    device_ids = devices_df['device_id'].tolist()
+    patient_ids = patients_df['patient_id'].tolist()
+    trial_site_ids = trial_sites_df['trial_site_id'].tolist()
+
+    for i in range(1, n+1):
+        records.append({
+            'reading_id': f'RDG{i:07d}',
+            'device_id': random.choice(device_ids),
+            'patient_id': random.choice(patient_ids),
+            'trial_site_id': random.choice(trial_site_ids),
+            'date_id': random.choice(date_ids),
+            'timestamp': fake.date_time_between(start_date=date(2019, 8, 1), end_date=date(2021, 11, 30)),
+            'reading_type': random.choice(['Scheduled', 'Alert', 'Manual']),
+            'heart_rate': round(random.uniform(45, 130), 1),
+            'systolic_pressure': round(random.uniform(90, 180), 1),
+            'diastolic_pressure': round(random.uniform(60, 120), 1),
+            'pressure_gradient': round(random.uniform(0, 50), 2),
+            'battery_level': round(random.uniform(0, 100), 1),
+            'signal_strength': round(random.uniform(0, 100), 1)
+        })
+    return pd.DataFrame(records)
+
+
 manufacturers = generate_manufacturers()
 devices = generate_devices(manufacturers)
 trial_sites = generate_trial_sites()
 patients = generate_patients(trial_sites)
 dates = generate_dates()
-print(dates[dates['is_holiday'] == True])
+readings = generate_device_readings(devices, patients, trial_sites, dates)
+print(readings.head())
