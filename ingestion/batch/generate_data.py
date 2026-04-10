@@ -133,10 +133,56 @@ def generate_device_readings(devices_df, patients_df, trial_sites_df, dates_df, 
     return pd.DataFrame(records)
 
 
+def generate_clinical_events(patients_df, trial_sites_df, dates_df, n=5000):
+    records = []
+    date_ids = dates_df['date_id'].tolist()
+    patient_ids = patients_df['patient_id'].tolist()
+    trial_site_ids = trial_sites_df['trial_site_id'].tolist()
+
+    for i in range(1, n+1):
+        records.append({
+            'event_id': f'EVT{i:06d}',
+            'patient_id': random.choice(patient_ids),
+            'trial_site_id': random.choice(trial_site_ids),
+            'date_id': random.choice(date_ids),
+            'timestamp': fake.date_time_between(start_date=date(2019, 8, 1), end_date=date(2021, 11, 30)),
+            'event_type': random.choice(['Enrollment', 'Checkup', 'Adverse Event', 'Device Adjustment', 'Withdrawal', 'Completion']),
+            'outcome': random.choice(['Successful', 'Inconclusive', 'Requires Follow-up', 'Critical']),
+            'physician_notes': random.choice([None, None, None, fake.sentence()]),
+            'follow_up_required': random.choice([True, False])
+        })
+    return pd.DataFrame(records)
+
+
+def generate_manufacturing(devices_df, manufacturers_df, dates_df, n=5000):
+    records = []
+    date_ids = dates_df['date_id'].tolist()
+    device_ids = devices_df['device_id'].tolist()
+    manufacturer_ids = manufacturers_df['manufacturer_id'].tolist()
+
+    for i in range(1, n+1):
+        units_produced = random.randint(1, 500)
+        records.append({
+            'production_id': f'PRD{i:06d}',
+            'device_id': random.choice(device_ids),
+            'manufacturer_id': random.choice(manufacturer_ids),
+            'date_id': random.choice(date_ids),
+            'units_produced': units_produced,
+            'units_passed_qc': random.randint(1, units_produced),
+            'defect_rate': round(random.uniform(0, 0.15), 4),
+            'production_status': random.choice(['Completed', 'In Progress', 'On Hold', 'Failed QC']),
+            'batch_number': f'BATCH{random.randint(1000, 9999)}'
+        })
+    return pd.DataFrame(records)
+
+
 manufacturers = generate_manufacturers()
 devices = generate_devices(manufacturers)
 trial_sites = generate_trial_sites()
 patients = generate_patients(trial_sites)
 dates = generate_dates()
 readings = generate_device_readings(devices, patients, trial_sites, dates)
-print(readings.head())
+clinical_events = generate_clinical_events(patients, trial_sites, dates)
+manufacturing = generate_manufacturing(devices, manufacturers, dates)
+print(clinical_events.head())
+print(manufacturing.head())
