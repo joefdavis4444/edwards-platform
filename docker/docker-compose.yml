@@ -8,9 +8,8 @@ x-airflow-common: &airflow-common
     AIRFLOW__CORE__FERNET_KEY: 'ZmDfcTF7_60GrrY167zsiPd67pEvs0aGOv2oasOM1Pg='
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'false'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
-    MINIO_ENDPOINT: http://minio:9000
-    MINIO_ACCESS_KEY: edwards_admin
-    MINIO_SECRET_KEY: edwards_password
+    GCP_PROJECT_ID: edwards-platform
+    GCS_BUCKET: edwards-datalake
   volumes:
     - ../orchestration/dags:/opt/airflow/dags
     - airflow-logs:/opt/airflow/logs
@@ -41,22 +40,6 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
       CLUSTER_ID: "edwards-cluster-001"
-    networks:
-      - edwards-net
-
-  # ── MinIO (local GCS/S3 replacement) ──────────────────────────────────────
-  minio:
-    image: minio/minio:latest
-    container_name: edwards-minio
-    ports:
-      - "9000:9000"   # API
-      - "9001:9001"   # Web UI
-    environment:
-      MINIO_ROOT_USER: edwards_admin
-      MINIO_ROOT_PASSWORD: edwards_password
-    command: server /data --console-address ":9001"
-    volumes:
-      - minio-data:/data
     networks:
       - edwards-net
 
@@ -105,6 +88,5 @@ networks:
     driver: bridge
 
 volumes:
-  minio-data:
   postgres-data:
   airflow-logs:
