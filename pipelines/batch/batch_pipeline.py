@@ -61,8 +61,53 @@ def run_patient_pipeline():
 
         )
 
+def run_pipeline(table_name, columns):
+    options = PipelineOptions(
+        project=PROJECT_ID,
+        runner='DirectRunner',
+        temp_location=f'gs://{BUCKET}/temp'
+    )
+    with beam.Pipeline(options=options) as p:
+        (
+            p
+            | f'Read_{table_name}' >> beam.io.ReadFromText(
+                f'{RAW_PATH}/{table_name}.csv',
+                skip_header_lines=1
+            )
+            | f'Parse_{table_name}' >> beam.Map(lambda line: dict(zip(
+                columns,
+                next(csv.reader(io.StringIO(line)))
+            )))
+            | f'ToJSON_{table_name}' >> beam.Map(json.dumps)
+            | f'Write_{table_name}' >> beam.io.WriteToText(
+                f'{CURATED_PATH}/{table_name}',
+                file_name_suffix='.jsonl'
+            )
+        )
+
+
+DIMENSION_TABLES = {
+    'dim_manufacturer': ['manufacturer_id', 'manufacturer_name', 'city', 'country', 'region', 'fda_approved', 'certification_status'],
+    'dim_device': ['device_id', 'device_model', 'device_type', 'firmware_version', 'status', 'manufacturer_id'],
+    'dim_trial_site': ['trial_site_id', 'site_name', 'city', 'country', 'region', 'status'],
+    'dim_date': ['date_id', 'full_date', 'year', 'month', 'day', 'quarter', 'day_of_week', 'is_holiday', 'holiday_name'],
+}
+
+FACT_TABLES = {
+    'fct_device_readings': ['reading_id', 'device_id', 'patient_id', 'trial_site_id','date_id','timestamp','reading_type','heart_rate','systolic_pressure','diastolic_pressure','pressure_gradient','battery_level','signal_strength' ],
+    'fct_clinical_events': ['event_id','patient_id','trial_site_id','date_id','timestamp','event_type','outcome','physician_notes','follow_up_required'],
+    'fct_manufacturing': ['production_id','device_id','manufacturer_id','date_id','units_produced','units_passed_qc','defect_rate','production_status','batch_number']
+}
+
+
 if __name__ == '__main__':
-    logging.info('Starting batch pipeline...')
+    print('Starting batch pipeline...')
     run_patient_pipeline()
-    logging.info('Pipeline complete.')
+    for table, columns in DIMENSION_TABLES.items():
+        print(f'Processing {table}...')
+        run_pipeline(table, columns)
+    for table, columns in FACT_TABLES.items():
+        print(f'Processing {table}...')
+        run_pipeline(table, columns)
+    print('Pipeline complete.')
         
