@@ -1,0 +1,11 @@
+[
+    {"name": "event_id", "type": "STRING", "mode": "REQUIRED"},
+    {"name": "patient_id", "type": "STRING", "mode": "REQUIRED"},
+    {"name": "trial_site_id", "type": "STRING", "mode": "REQUIRED"},
+    {"name": "date_id", "type": "INTEGER", "mode": "NULLABLE"},
+    {"name": "timestamp", "type": "TIMESTAMP", "mode": "REQUIRED"},
+    {"name": "event_type", "type": "STRING", "mode": "NULLABLE"},
+    {"name": "outcome", "type": "STRING", "mode": "NULLABLE"},
+    {"name": "physician_notes", "type": "STRING", "mode": "NULLABLE"},
+    {"name": "follow_up_required", "type": "BOOLEAN", "mode": "NULLABLE"}
+]

@@ -1,0 +1,10 @@
+[
+    {"name": "patient_id", "type": "STRING", "mode": "REQUIRED"},
+    {"name": "patient_token", "type": "STRING", "mode": "NULLABLE"},
+    {"name": "age_group", "type": "STRING", "mode": "NULLABLE"},
+    {"name": "trial_site_id", "type": "STRING", "mode": "NULLABLE"},
+    {"name": "diagnosis", "type": "STRING", "mode": "NULLABLE"},
+    {"name": "severity_level", "type": "STRING", "mode": "NULLABLE"},
+    {"name": "treatment", "type": "STRING", "mode": "NULLABLE"},
+    {"name": "enrollment_status", "type": "STRING", "mode": "NULLABLE"}
+]

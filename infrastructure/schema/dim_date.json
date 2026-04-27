@@ -1,0 +1,11 @@
+[
+    {"name": "date_id", "type": "INTEGER", "mode": "REQUIRED"},
+    {"name": "full_date", "type": "DATE", "mode": "NULLABLE"},
+    {"name": "year", "type": "INTEGER", "mode": "NULLABLE"},
+    {"name": "month", "type": "INTEGER", "mode": "NULLABLE"},
+    {"name": "day", "type": "INTEGER", "mode": "NULLABLE"},
+    {"name": "quarter", "type": "INTEGER", "mode": "NULLABLE"},
+    {"name": "day_of_week", "type": "STRING", "mode": "NULLABLE"},
+    {"name": "is_holiday", "type": "BOOLEAN", "mode": "NULLABLE"},
+    {"name": "holiday_name", "type": "STRING", "mode": "NULLABLE"}
+]

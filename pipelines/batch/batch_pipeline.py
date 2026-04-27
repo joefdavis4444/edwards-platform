@@ -6,13 +6,15 @@ import apache_beam as beam
 import hashlib
 import json
 from apache_beam.options.pipeline_options import PipelineOptions
-from google.cloud import bigquery
+from datetime import date
 
 PROJECT_ID = os.environ.get('GCP_PROJECT_ID', 'edwards-platform')
 BUCKET = os.environ.get('GCS_BUCKET', 'edwards-datalake')
+RUN_DATE = date.today().isoformat()
 RAW_PATH = f'gs://{BUCKET}/raw'
-CURATED_PATH =f'gs://{BUCKET}/curated'
-PROCESSED_PATH = f'gs://{BUCKET}/processed'
+CURATED_PATH = f'gs://{BUCKET}/curated/{RUN_DATE}'
+PROCESSED_PATH = f'gs://{BUCKET}/processed/{RUN_DATE}'
+DEAD_LETTER_PATH = f'gs://{BUCKET}/dead_letter/{RUN_DATE}'
 
 logging.basicConfig(level=logging.INFO)
 
@@ -32,6 +34,49 @@ def mask_patient_phi(record):
         'enrollment_status': record['enrollment_status']
     }
 
+REQUIRED_FIELDS = ['patient_id', 'device_id', 'manufacturer_id', 'trial_site_id',
+    'date_id', 'reading_id', 'event_id', 'production_id',
+    'heart_rate', 'systolic_pressure', 'diastolic_pressure',
+    'pressure_gradient', 'battery_level', 'signal_strength',
+    'units_produced', 'units_passed_qc', 'defect_rate']
+
+RANGE_RULES = {
+    'heart_rate':        (0, 300),
+    'systolic_pressure': (0, 300),
+    'pressure_gradient': (0, 300),
+    'defect_rate':       (0, 10)
+}
+
+
+def passes_quality(record):
+    for field in REQUIRED_FIELDS:
+        if field in record and (record[field] is None or str(record[field]).strip() == ''):
+            return False
+    for field, (min_val, max_val) in RANGE_RULES.items():
+        if field in record:
+            try:
+                if not (min_val <= float(record[field]) <= max_val):
+                    return False
+            except (ValueError, TypeError):
+                return False
+    return True
+
+
+def get_fail_reason(record):
+    for field in REQUIRED_FIELDS:
+        if field in record and (record[field] is None or str(record[field]).strip() == ''):
+            return {**record, '_fail_reason': f'null_{field}'}
+    for field, (min_val, max_val) in RANGE_RULES.items():
+        if field in record:
+            try:
+                if not (min_val <= float(record[field]) <= max_val):
+                    return {**record, '_fail_reason': f'range_{field}'}
+            except (ValueError, TypeError):
+                return {**record, '_fail_reason': f'type_cast_{field}'}
+    return {**record, '_fail_reason': 'unknown'}
+
+      
+
 def run_patient_pipeline():
     options = PipelineOptions(
         project = PROJECT_ID,
@@ -40,7 +85,7 @@ def run_patient_pipeline():
     )
 
     with beam.Pipeline(options=options) as p:
-        (
+        parsed = (
             p
             | 'ReadPatients' >> beam.io.ReadFromText(
                 f'{RAW_PATH}/dim_patient.csv',
@@ -52,13 +97,34 @@ def run_patient_pipeline():
                  'severity_level', 'treatment', 'enrollment_status'],
                 next(csv.reader(io.StringIO(line)))
             )))
+        )
+
+        good = parsed | 'FilterGood_dim_patient' >> beam.Filter(passes_quality)
+        bad  = parsed | 'FilterBad_dim_patient'  >> beam.Filter(lambda r: not passes_quality(r))
+
+        # Deduplication: in production, deduplicate on primary key here before writing
+        # to curated. Skipped because generate_data.py uses seed(42) which produces
+        # unique IDs. Implementation would use beam.GroupByKey on the primary ID
+        # and emit one record per key.
+
+        (
+            good
             | 'MaskPHI' >> beam.Map(mask_patient_phi)
-            | 'ToJSON' >> beam.Map(json.dumps)
-            | 'WriteToGCS' >> beam.io.WriteToText(
+            | 'ToJSON_dim_patient' >> beam.Map(json.dumps)
+            | 'WriteToGCS_dim_patient' >> beam.io.WriteToText(
                 f'{CURATED_PATH}/dim_patient',
                 file_name_suffix='.jsonl'
             )
+        )
 
+        (
+            bad
+            | 'DeadLetterMap_dim_patient' >> beam.Map(get_fail_reason)
+            | 'DeadLetterJSON_dim_patient' >> beam.Map(json.dumps)
+            | 'WriteDeadLetter_dim_patient' >> beam.io.WriteToText(
+                f'{DEAD_LETTER_PATH}/dim_patient',
+                file_name_suffix='.jsonl'
+            )
         )
 
 def run_pipeline(table_name, columns):
@@ -68,7 +134,7 @@ def run_pipeline(table_name, columns):
         temp_location=f'gs://{BUCKET}/temp'
     )
     with beam.Pipeline(options=options) as p:
-        (
+        parsed = (
             p
             | f'Read_{table_name}' >> beam.io.ReadFromText(
                 f'{RAW_PATH}/{table_name}.csv',
@@ -78,12 +144,36 @@ def run_pipeline(table_name, columns):
                 columns,
                 next(csv.reader(io.StringIO(line)))
             )))
+        )
+
+        good = parsed | f'FilterGood_{table_name}' >> beam.Filter(passes_quality)
+        bad  = parsed | f'FilterBad_{table_name}'  >> beam.Filter(lambda r: not passes_quality(r))
+
+        # Deduplication: in production, deduplicate on primary key here before writing
+        # to curated. Skipped because generate_data.py uses seed(42) which produces
+        # unique IDs. Implementation would use beam.GroupByKey on the primary ID
+        # and emit one record per key.
+
+        (
+            good
             | f'ToJSON_{table_name}' >> beam.Map(json.dumps)
             | f'Write_{table_name}' >> beam.io.WriteToText(
                 f'{CURATED_PATH}/{table_name}',
                 file_name_suffix='.jsonl'
             )
         )
+
+        (
+            bad
+            | f'DeadLetterMap_{table_name}' >> beam.Map(get_fail_reason)
+            | f'DeadLetterJSON_{table_name}' >> beam.Map(json.dumps)
+            | f'WriteDeadLetter_{table_name}' >> beam.io.WriteToText(
+                f'{DEAD_LETTER_PATH}/{table_name}',
+                file_name_suffix='.jsonl'
+            )
+        )
+
+          
 
 
 DIMENSION_TABLES = {

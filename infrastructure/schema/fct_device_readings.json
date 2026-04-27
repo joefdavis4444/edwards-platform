@@ -1,0 +1,14 @@
+[
+    {"name": "reading_id", "type": "STRING", "mode": "REQUIRED"},
+    {"name": "device_id", "type": "STRING", "mode": "REQUIRED"},
+    {"name": "patient_id", "type": "STRING", "mode": "REQUIRED"},
+    {"name": "trial_site_id", "type": "STRING", "mode": "REQUIRED"},
+    {"name": "reading_type", "type": "STRING", "mode": "NULLABLE"},
+    {"name": "timestamp", "type": "TIMESTAMP", "mode": "REQUIRED"},
+    {"name": "heart_rate", "type": "FLOAT", "mode": "REQUIRED"},
+    {"name": "systolic_pressure", "type": "FLOAT", "mode": "REQUIRED"},
+    {"name": "diastolic_pressure", "type": "FLOAT", "mode": "REQUIRED"},
+    {"name": "pressure_gradient", "type": "FLOAT", "mode": "REQUIRED"},
+    {"name": "battery_level", "type": "FLOAT", "mode": "REQUIRED"},
+    {"name": "signal_strength", "type": "FLOAT", "mode": "REQUIRED"}
+]

@@ -12,11 +12,17 @@ fake = Faker()
 Faker.seed(42)
 random.seed(42)
 
-BOOTSTRAP_SERVERS = os.environ.get('KAFKA_BOOTSTRAP_SERVERS', 'localhost:9092')
+BOOTSTRAP_SERVERS = os.environ.get('CONFLUENT_BOOTSTRAP_SERVERS', 'localhost:9092')
+CONFLUENT_API_KEY = os.environ.get('CONFLUENT_API_KEY')
+CONFLUENT_API_SECRET = os.environ.get('CONFLUENT_API_SECRET')
 PROJECT_ID = os.environ.get('GCP_PROJECT_ID', 'edwards-platform')
 
 producer = KafkaProducer(
     bootstrap_servers=[BOOTSTRAP_SERVERS],
+    security_protocol='SASL_SSL',
+    sasl_mechanism='PLAIN',
+    sasl_plain_username=CONFLUENT_API_KEY,
+    sasl_plain_password=CONFLUENT_API_SECRET,
     value_serializer=lambda v: json.dumps(v).encode('utf-8'),
     key_serializer=lambda k: k.encode('utf-8')
 )

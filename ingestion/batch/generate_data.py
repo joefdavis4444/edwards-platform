@@ -136,6 +136,23 @@ def generate_device_readings(devices_df, patients_df, trial_sites_df, dates_df, 
     trial_site_ids = trial_sites_df['trial_site_id'].tolist()
 
     for i in range(1, n+1):
+        if random.random() < 0.01:
+              records.append({
+                  'reading_id': f'RDG{i:07d}',
+                  'device_id': None if random.random() < 0.5 else random.choice(device_ids),
+                  'patient_id': random.choice(patient_ids),
+                  'trial_site_id': random.choice(trial_site_ids),
+                  'date_id': random.choice(date_ids),
+                  'timestamp': fake.date_time_between(start_date=date(2019, 8, 1), end_date=date(2021, 11, 30)),
+                  'reading_type': random.choice(['Scheduled', 'Alert', 'Manual']),
+                  'heart_rate': round(random.uniform(400, 999), 1),
+                  'systolic_pressure': round(random.uniform(90, 180), 1),
+                  'diastolic_pressure': round(random.uniform(60, 120), 1),
+                  'pressure_gradient': round(random.uniform(0, 50), 2),
+                  'battery_level': round(random.uniform(0, 100), 1),
+                  'signal_strength': round(random.uniform(0, 100), 1)
+              })
+              continue
         records.append({
             'reading_id': f'RDG{i:07d}',
             'device_id': random.choice(device_ids),
