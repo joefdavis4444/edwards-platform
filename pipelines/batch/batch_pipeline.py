@@ -9,7 +9,7 @@ from apache_beam.options.pipeline_options import PipelineOptions
 from datetime import date
 
 PROJECT_ID = os.environ.get('GCP_PROJECT_ID', 'edwards-platform')
-BUCKET = os.environ.get('GCS_BUCKET', 'edwards-datalake')
+BUCKET = os.environ.get('EDWARDS_BUCKET', 'edwards-datalake')
 RUN_DATE = date.today().isoformat()
 RAW_PATH = f'gs://{BUCKET}/raw'
 CURATED_PATH = f'gs://{BUCKET}/curated/{RUN_DATE}'
