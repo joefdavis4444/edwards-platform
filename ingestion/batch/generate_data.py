@@ -10,7 +10,7 @@ fake = Faker()
 Faker.seed(42)
 random.seed(42)
 
-OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '../../storage/raw')
+OUTPUT_DIR = '/tmp/raw'
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 def generate_manufacturers(_n=10):
